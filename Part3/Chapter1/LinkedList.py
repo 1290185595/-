@@ -43,23 +43,23 @@ class LinkedList:
 
 class LinkedListWithSentinel:
     def __init__(self):
-        self.sentinel = ListNode(None)
-        self.sentinel.prev = self.sentinel
-        self.sentinel.next = self.sentinel
+        self.null = ListNode(None)
+        self.null.prev = self.null
+        self.null.next = self.null
 
     def search(self, k):
-        self.sentinel.key = k
-        x = self.sentinel.next
+        self.null.key = k
+        x = self.null.next
         while x.key != k:
             x = x.next
-        return None if x == self.sentinel else x
+        return None if x == self.null else x
 
     def prepend(self, x):
         self.insert(x)
 
     def insert(self, x, y=None):
         if y is None:
-            y = self.sentinel
+            y = self.null
         x.next = y.next
         x.prev = y
         y.next.prev = x
