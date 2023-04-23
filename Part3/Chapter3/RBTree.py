@@ -82,7 +82,7 @@ class RBTree(BinarySearchTree):
                 x = self.root
         x.color = "black"
 
-    def _delete(self, z: TreeNode) -> TreeNode:
+    def delete(self, z: TreeNode) -> TreeNode:
         y = z if z.left is None or z.right is None else self.successor(z)
         y.color, z.color = z.color, y.color
         x = y.left or y.right

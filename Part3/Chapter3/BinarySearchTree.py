@@ -29,7 +29,7 @@ class BinarySearchTree(RootedTree):
             x = z.left or z.right
         else:
             x = self.successor(z)
-            self.delete(x)
+            BinarySearchTree.delete(self, x)
             x.left = z.left
             x.right = z.right
             x.left.parent = x
